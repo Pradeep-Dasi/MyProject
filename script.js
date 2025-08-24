@@ -1,1 +1,0 @@
-// document.writeln("I am JavaScript!<br>");
