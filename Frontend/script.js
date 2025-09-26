@@ -4,3 +4,6 @@ var y=2;
 if(x>y){
     document.write("false<br>",x,y);
 }
+else{
+    
+}
