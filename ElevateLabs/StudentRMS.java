@@ -11,8 +11,6 @@ class Student {
         this.name = name;
         this.marks = marks;
     }
-
-    // Getters and setters for the fields
     public int getId() {
         return id;
     }
@@ -85,7 +83,7 @@ public class StudentRMS {
     private static void addStudent() {
         System.out.print("Enter Student ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();  
         System.out.print("Enter Student Name: ");
         String name = scanner.nextLine();
         System.out.print("Enter Marks: ");
@@ -145,6 +143,6 @@ public class StudentRMS {
                 return student;
             }
         }
-        return null;  // Return null if student is not found
+        return null;
     }
 }
