@@ -125,7 +125,12 @@ public class StrongNumber {
 
         while (num != 0) {
             int digit = num % 10;
-            sum += factorial(digit);
+            int fact = 1;
+            for(int i=1; i<=digit; i++)
+            {
+                fact *= i;
+            }
+            sum += fact;
             num /= 10;
         }
 
@@ -142,34 +147,29 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class HappyNumber {
-    
-    static int getSquareSum(int num) {
-        int sum = 0;
-        while (num != 0) {
-            int digit = num % 10;
-            sum += digit * digit;
-            num /= 10;
+    public static boolean HN(int num) {
+        Set<Integer> seen = new HashSet<>();
+        while(num != 1 && !seen.contains(num)) {
+            seen.add(num);
+            int sum=0;
+            int n = num;
+            while(n > 0)
+            {
+                int d = n%10;
+                sum += d*d;
+                n /= 10;
+            }
+            num = sum;
         }
-        return sum;
+        return num==1;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num = sc.nextInt();
-        
-        Set<Integer> seen = new HashSet<>();
-
-        while (num != 1 && !seen.contains(num)) {
-            seen.add(num);
-            num = getSquareSum(num);
-        }
-
-        if (num == 1)
+        if (HN(num))
             System.out.println("Happy Number");
         else
             System.out.println("Not a Happy Number");
     }
 }
-
-
