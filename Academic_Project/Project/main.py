@@ -11,7 +11,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.impute import SimpleImputer
 
 # Load the dataset
-data_path = "D:/project/data.csv"
+# data_path = "D:/project/data.csv"
+data_path = "F:/MyProject/Academic_Project/Project/data.csv"
 data = pd.read_csv(data_path)
 
 # Assuming 'labels' is the target column and the rest are features
